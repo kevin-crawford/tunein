@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>TuneIn: Lyric and Concert Search</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Have a song stuck in your head? Search certain lyrics to find the song.">
+		<meta name="keywords" content="lyric finder, song stuck in head, earworm, name that song">
+		<meta name="author" content="Kevin Crawford">
+		<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	
+		
+</head>
+<body>
+
+	<!-- NAVIGATION/LOGO -->
+	<header role="banner">
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">Tune</span>In</h1>
+			</div>
+			<nav role="navigation">
+				<ul>
+					<li class="current"><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<!-- BANNER SHOWCASE -->
+<section role="region" id="showcase">
+	<div class="container">
+		<h1>Have you ever had a song stuck in your head?</h1>
+		<p>“Earworms” is the incessant, unrelenting, and grating repetition of a fraction of a song. Whether it’s the chorus or the hook, just a few seconds of the musical piece is simply inescapable.
+		</p>
+	</div>
+</section>
+
+<!-- SEARCH FORM -->
+<section role="region" id="focus-result"> 
+	<div class="container">	
+
+		<div class="box"> 
+				<h3>Search by Song Title AND Lyric</h3>
+				<form name="song-search" id="song-search" role="form">
+				<fieldset>
+					<div class="title-search">
+						<legend>Song Title</legend>
+						<label for="title-search" id="title">
+						
+						<input title="input a song title" type="text" aria-labelledby="song-search title" placeholder="Enter A Song Title..." class="js-song-query" required>
+						</label>
+						
+					</div>
+
+					<div class="lyric-search">
+						<legend>Artist</legend>
+						<label for="lyric-search" id="lyric">
+						
+						<input title="input song lyrics" classtype="text" aria-labelledby="song-search lyric" placeholder="Enter Song Lyrics Here..." class="js-artist-query" required>
+						</label>
+						
+					</div>
+				</fieldset>
+				</form>
+				<button form="song-search" title="Submit search by song title" type="submit" class="search-button">Search</button>
+				
+		</div>
+
+<!-- YOUTUBE RESULT -->
+		<div class="box"> 
+			<h3>Click Thumbnail to Listen</h3>
+			<div id="youtube-result"></div>
+		</div>
+
+<!-- FOCUS LYRICS -->
+		<div class="box">
+			<h3>Song Lyrics</h3>
+			<div class="lyrics">
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- MORE RESULTS SECTION -->
+<section role="region" id="concert-results">
+	<div id="js-concertresults"></div>
+</section>
+
+<!-- FOOTER/COPYRIGHT -->
+<footer role="contentinfo">
+	<p>TuneIn: Lyric Generator / Concert Search, Copyright &copy; 2018 </p>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

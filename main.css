@@ -1,0 +1,241 @@
+body {
+	font: 15px/1.5 Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: #f4f4f4;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* GLOBAL */
+header {
+	background: #35424a;
+	color: #ffffff;
+	padding-top: 30px;
+	min-height: 70px;
+	border-bottom: #00857a 3px solid;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* HEADER */
+
+header a {
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+header li {
+	
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
+header #branding {
+	float: left;
+}
+
+header #branding h1 {
+	margin: 0;
+}
+
+header nav {
+	float: right;
+	margin-top: 10px;
+}
+
+header .highlight, header .current a {
+	color:#c2d801;
+	font-weight: bold;
+}
+
+header a:hover {
+	color: #cccccc;
+	font-weight: bold;
+}
+
+
+/* Showcase */
+
+#showcase {
+	min-height: 400px;
+	background-image: url('https://cdn.pixabay.com/photo/2015/09/18/11/38/audience-945449_960_720.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #ffffff;
+	text-align: center;
+}
+
+#showcase h1 {
+	margin-top:	100px;
+	font-size: 34px;
+}
+
+#showcase p {
+	font-size: 18px
+}
+
+
+
+
+/* FORM STYLING */
+
+fieldset {
+	border: 0px;
+}
+
+#song-search {
+	margin-top: 75px;
+	text-align: center;
+}
+
+
+.title-search {
+	padding-bottom: 10px;
+}	
+
+.title-search input{
+	padding: 4px;
+	height: 20px;
+	width: 125px;
+}
+
+.lyric-search input {
+	padding: 4px;
+	height: 20px;
+	width: 155px;
+}
+
+.search-button {
+	height: 30px;
+	background: #00857a;
+	border: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #ffffff;
+}
+
+/* 3 BOX CONTAINER WIDE STYLING. SEARCH RESULT/MORE RESULTS*/
+
+#lyric-results {
+	background-color: lightblue;
+	height: 250px;
+	width: 310px;
+	overflow-y: scroll;
+	
+	
+}
+
+#youtube-result {
+	margin-top: 42px;
+}
+
+
+/* more-results, focus-result*/
+
+#focus-result {
+	margin-top: 20px;
+}
+
+#concert-results {   
+	background-color: #cccccc;
+}
+
+.container.more-result {
+	padding: 15px 10px;
+}
+
+/* more-results .box, focus-result .box */
+#concert-results .box,
+#focus-result .box,
+.lyrics {
+	float: left;
+	width: 30%;
+	text-align: center;
+	padding: 10px;
+}
+
+
+
+/* MORE RESULTS */
+
+.container h2,
+.container p {
+	text-align: center;
+}
+
+/* SIDEBAR */
+
+aside#sidebar{
+	float: right;
+	width: 30%;
+	margin-top: 10px;
+}
+
+
+/* MAIN COLUMN ABOUT */
+article#main-col {
+	float: left;
+	width: 65%;
+}
+
+.dark {
+	background: #35424a;
+	color: #ffffff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+	 padding: 20px;
+	 margin-top: 20px;
+	 color: #ffffff;
+	 text-align: center;
+	 background-color: #00857a;
+}
+
+
+/* Media Queries */
+
+@media(max-width: 768px){
+	header #branding,
+	header nav,
+	header nav li,
+	#concert-results .box,
+	#focus-result .box,
+	.title-search,
+	.lyric-search,
+	.lyrics,
+	article#main-col,
+	aside#side-bar{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+header {
+	padding-bottom: 20px;
+}
+
+aside#sidebar {
+	width: 100%;
+}
+
+#showcase h1 {
+	margin-top: 10px;
+}
+
+}
