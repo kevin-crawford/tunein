@@ -86,7 +86,7 @@ function renderResult(data) {
 // EVENTFUL API FUNCTIONS
 function getArtistData(artistQuery, callback) {
   const settings = {
-    url: 'http://api.eventful.com/json/performers/search',
+    url: 'https://api.eventful.com/json/performers/search',
     data: {
       app_key: '7C4BMRmZ8LDT4C4k',
       keywords: `${artistQuery}`,
@@ -121,7 +121,7 @@ function getEventData(artistData, callback) {
   console.log(artistID);
 
   const settings = {
-    url: 'http://api.eventful.com/json/performers/get',
+    url: 'https://api.eventful.com/json/performers/get',
     data: {
       app_key: '7C4BMRmZ8LDT4C4k',
       id: artistID,
@@ -153,9 +153,7 @@ function renderEvents(eventData) {
     $('#js-concertresults').empty();
     $('#js-concertresults').append(
       `<div class="container">
-          <h2>Upcoming Events</h2>
-          
-  
+        <h2>Upcoming Events</h2>
         <div class="box more-result">
           <p>Event: ${eventData.events.event[0].title}</p>
           <p>Location: ${eventData.events.event[0].location}</p>
