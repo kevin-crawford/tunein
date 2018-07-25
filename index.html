@@ -49,22 +49,21 @@
 				<h3>Search by Song and Artist</h3>
 				<form name="song-search" id="song-search" role="form">
 				<fieldset>
+
+						<div class="lyric-search">
+								<legend>Artist</legend>
+								<label for="js-artist-query" id="lyric">
+								<input title="input song lyrics" classtype="text"  aria-labelledby="song-search lyric" placeholder="Enter Artist Name Here..." class="js-artist-query" required>
+								</label>
+						</div>
+
 					<div class="title-search">
 						<legend>Song Title</legend>
 						<label for="js-song-query" id="title">
-						
 						<input title="input a song title" type="text" aria-labelledby="song-search title" placeholder="Enter A Song Title..." class="js-song-query" required>
-						</label>
-						
+						</label>	
 					</div>
 
-					<div class="lyric-search">
-						<legend>Artist</legend>
-						<label for="js-artist-query" id="lyric">
-						<input title="input song lyrics" classtype="text"  aria-labelledby="song-search lyric" placeholder="Enter Artist Name Here..." class="js-artist-query" required>
-						</label>
-						
-					</div>
 				</fieldset>
 				</form>
 				<button form="song-search" title="Submit search by song title" type="submit" class="search-button" >Search</button>
@@ -73,13 +72,12 @@
 
 <!-- YOUTUBE RESULT -->
 		<div	id="thumbnail" class="col-3"> 
-			<h3>Song Thumbnail</h3>
+			
 			<div id="youtube-result"></div>
 		</div>
 
 <!-- FOCUS LYRICS -->
 		<div id="lyrics-container" class="col-3">
-			<h3>Song Lyrics</h3>
 			<div class="lyrics">
 				
 			</div>

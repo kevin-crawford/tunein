@@ -14,26 +14,11 @@ $('#song-search').submit(event => {
   songTitleTarget.val("");
   artistTarget.val("");
 
-  // let x = document.getElementById('thumbnail');
-  // if(x.style.display === 'none'){
-  //   x.style.display === 'block';
-  // }
-
   getLyricData(songTitleQuery, artistQuery, renderLyrics);
   getYoutubeData(songTitleQuery, artistQuery, renderResult);
   getArtistData(artistQuery, getEventData);
 
 });
-
-// SHOW FOCUS ITEMS
-// function unhideResults(){
-//   let x = document.getElementById('thumbnail');
-//   console.log(x);
-//   if(x.style.visibility === "hidden"){
-//     x.style.visibility = "visible";
-//   }
-// }
-
 
 // MUSIXMATCH LYRIC API FUNCTION
 function getLyricData(songTitleQuery, artistQuery, callback) {
@@ -46,8 +31,10 @@ function getLyricData(songTitleQuery, artistQuery, callback) {
     dataType: 'json',
     success: callback,
     error: function() {
-			$('#lyric-results').remove();
-      $('.lyrics').append(`<div id="lyric-results"><p>No results found for <br>Song Title: ${songTitleQuery} <br> Artist: ${artistQuery}</p> </div>`);
+			$('.lyrics').empty();
+      $('.lyrics').append(`
+      <h3>No Lyrics Found</h3>
+      <div id="lyric-results"><p>No results found for <br>Song Title: ${songTitleQuery} <br> Artist: ${artistQuery}</p> </div>`);
     }
   }
   $.ajax(settings);
@@ -55,12 +42,13 @@ function getLyricData(songTitleQuery, artistQuery, callback) {
 }
 
 function renderLyrics(data) {
-  $('#lyric-results').remove();
+  $('.lyrics').empty();
   const results = data.result.track.text;
   var paddedResults = results.replace(/\n/g, '<br>');
 
   $('.lyrics').append(
-    `	<p id="lyric-results">${paddedResults}</p>`);
+    `<h3>Song Lyrics</h3>	
+    <p id="lyric-results">${paddedResults}</p>`);
 }
 
 
@@ -90,7 +78,8 @@ function renderResult(data) {
   console.log(thumbnailResult);
   $('#youtube-result').empty();
   $('#youtube-result').append(
-    `<a href="https://www.youtube.com/watch?v=${youtubeURL}" id="youtube-link" target="_blank">
+    ` <h3>Song Thumbnail</h3>
+    <a href="https://www.youtube.com/watch?v=${youtubeURL}" id="youtube-link" target="_blank">
     <img src="${data.items[1].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>	
     <p>${data.items[1].snippet.title}</p>`
   )
@@ -174,21 +163,21 @@ function renderEvents(eventData) {
       `<div class="container">
         <h2>Upcoming Events</h2>
         <div class="col-3">
-          <p>Event: <a href="${eventData.events.event[0].url}" target="_blank">${eventData.events.event[0].title}</a></p>
-          <p>Location: ${eventData.events.event[0].location}</p>
-          <p>Date: ${eventData.events.event[0].start_time}</p>
+          <p><span>Event:</span> <a href="${eventData.events.event[0].url}" target="_blank">${eventData.events.event[0].title}</a></p>
+          <p><span>Location:</span> ${eventData.events.event[0].location}</p>
+          <p><span>Date:</span> ${eventData.events.event[0].start_time}</p>
   			</div>
   
         <div class="col-3">
-          <p>Event: <a href="${eventData.events.event[1].url}" target="_blank">${eventData.events.event[1].title}</a></p>
-          <p>Location: ${eventData.events.event[1].location}</p>
-          <p>Date: ${eventData.events.event[1].start_time}</p>
+          <p><span>Event:</span> <a href="${eventData.events.event[1].url}" target="_blank">${eventData.events.event[1].title}</a></p>
+          <p><span>Location:</span> ${eventData.events.event[1].location}</p>
+          <p><span>Date:</span> ${eventData.events.event[1].start_time}</p>
         </div>
   
         <div class="col-3">
-          <p>Event: <a href="${eventData.events.event[2].url}" target="_blank">${eventData.events.event[2].title}</a></p>
-          <p>Location: ${eventData.events.event[2].location}</p>
-          <p>Date: ${eventData.events.event[2].start_time}</p>
+          <p><span>Event</span>: <a href="${eventData.events.event[2].url}" target="_blank">${eventData.events.event[2].title}</a></p>
+          <p><span>Location:</span> ${eventData.events.event[2].location}</p>
+          <p><span>Date:</span> ${eventData.events.event[2].start_time}</p>
         </div>
         </div>`   
     )
