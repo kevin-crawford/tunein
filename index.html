@@ -9,8 +9,8 @@
 		<meta name="keywords" content="lyric finder, song stuck in head, earworm, name that song">
 		<meta name="author" content="Kevin Crawford">
 		<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  	src="https://code.jquery.com/jquery-3.3.1.js"
+  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 	
 		
@@ -45,8 +45,8 @@
 <section role="region" id="focus-result"> 
 	<div class="container">	
 
-		<div class="box"> 
-				<h3>Search by Song Title AND Lyric</h3>
+		<div id="search-form" class="col-3"> 
+				<h3>Search by Song and Artist</h3>
 				<form name="song-search" id="song-search" role="form">
 				<fieldset>
 					<div class="title-search">
@@ -61,24 +61,24 @@
 					<div class="lyric-search">
 						<legend>Artist</legend>
 						<label for="js-artist-query" id="lyric">
-						<input title="input song lyrics" classtype="text"  aria-labelledby="song-search lyric" placeholder="Enter Song Lyrics Here..." class="js-artist-query" required>
+						<input title="input song lyrics" classtype="text"  aria-labelledby="song-search lyric" placeholder="Enter Artist Name Here..." class="js-artist-query" required>
 						</label>
 						
 					</div>
 				</fieldset>
 				</form>
-				<button form="song-search" title="Submit search by song title" type="submit" class="search-button">Search</button>
-				
+				<button form="song-search" title="Submit search by song title" type="submit" class="search-button" >Search</button>
+				<!-- onsubmit="unhideResults()" -->
 		</div>
 
 <!-- YOUTUBE RESULT -->
-		<div class="box"> 
-			<h3>Click Thumbnail to Listen</h3>
+		<div	id="thumbnail" class="col-3"> 
+			<h3>Song Thumbnail</h3>
 			<div id="youtube-result"></div>
 		</div>
 
 <!-- FOCUS LYRICS -->
-		<div class="box">
+		<div id="lyrics-container" class="col-3">
 			<h3>Song Lyrics</h3>
 			<div class="lyrics">
 				
@@ -94,7 +94,7 @@
 
 <!-- FOOTER/COPYRIGHT -->
 <footer role="contentinfo">
-	<p>TuneIn: Lyric Generator / Concert Search, Copyright &copy; 2018 </p>
+	<p>TuneIn: Lyric Generator / Concert Search Copyright &copy; 2018 </p>
 </footer>
 <script src="main.js"></script>
 </body>

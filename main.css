@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding: 0;
@@ -17,7 +21,7 @@ header {
 	color: #ffffff;
 	padding-top: 30px;
 	min-height: 70px;
-	border-bottom: #00857a 3px solid;
+	border-bottom: #7d8500 3px solid;
 }
 
 ul {
@@ -35,7 +39,6 @@ header a {
 }
 
 header li {
-	
 	display: inline;
 	padding: 0 20px 0 20px;
 }
@@ -68,9 +71,10 @@ header a:hover {
 
 #showcase {
 	min-height: 400px;
-	background-image: url('https://i.imgur.com/7Q89Eco.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/7Q89Eco.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	border-bottom: #7d8500 3px solid;
 	color: #ffffff;
 	text-align: center;
 }
@@ -94,7 +98,7 @@ fieldset {
 }
 
 #song-search {
-	margin-top: 75px;
+	margin-top: 40px;
 	text-align: center;
 }
 
@@ -104,24 +108,26 @@ fieldset {
 }	
 
 .title-search input{
-	padding: 4px;
-	height: 20px;
-	width: 125px;
+	padding: 5px;
+	height: 40px;
+	width: 175px;
 }
 
 .lyric-search input {
-	padding: 4px;
-	height: 20px;
-	width: 155px;
+	padding: 5px;
+	height: 40px;
+	width: 175px;
 }
 
 .search-button {
-	height: 30px;
-	background: #00857a;
+	height: 40px;
+	width: 175px;
+	background: #7d8500;
 	border: 0;
 	padding-left: 20px;
 	padding-right: 20px;
 	color: #ffffff;
+	font-size: 18px;
 }
 
 /* 3 BOX CONTAINER WIDE STYLING. SEARCH RESULT/MORE RESULTS*/
@@ -131,45 +137,43 @@ fieldset {
 	height: 250px;
 	width: 310px;
 	overflow-y: scroll;
-	
-	
 }
+
+/* #thumbnail {
+	display: none;
+} */
 
 #youtube-result {
-	margin-top: 42px;
+	margin-top: 52px;
 }
-
-
-/* more-results, focus-result*/
 
 #focus-result {
 	margin-top: 20px;
 }
 
 #concert-results {   
-	background-color: #cccccc;
+	background-color: #999fa3;
 }
 
-.container.more-result {
-	padding: 15px 10px;
-}
-
-/* more-results .box, focus-result .box */
-#concert-results .box,
-#focus-result .box,
+#concert-results .col-3,
+#focus-result .col-3,
 .lyrics {
 	float: left;
 	width: 30%;
 	text-align: center;
 	padding: 10px;
+	margin: 10px;
 }
 
+#concert-results .col-3 {
+	border: black solid 3px;
+	background-color: #f4f4f4;
+}
 
 
 /* MORE RESULTS */
 
-.container h2,
-.container p {
+.container h2 {
 	text-align: center;
 }
 
@@ -201,10 +205,11 @@ article#main-col {
 
 footer {
 	 padding: 20px;
-	 margin-top: 20px;
+	 font-size: 16px;
 	 color: #ffffff;
 	 text-align: center;
-	 background-color: #00857a;
+	 background-color: #434440;
+	 border-top: #7d8500 3px solid;
 }
 
 
@@ -214,8 +219,8 @@ footer {
 	header #branding,
 	header nav,
 	header nav li,
-	#concert-results .box,
-	#focus-result .box,
+	#concert-results .col-3,
+	#focus-result .col-3,
 	.title-search,
 	.lyric-search,
 	.lyrics,

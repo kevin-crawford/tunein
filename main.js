@@ -14,10 +14,26 @@ $('#song-search').submit(event => {
   songTitleTarget.val("");
   artistTarget.val("");
 
+  // let x = document.getElementById('thumbnail');
+  // if(x.style.display === 'none'){
+  //   x.style.display === 'block';
+  // }
+
   getLyricData(songTitleQuery, artistQuery, renderLyrics);
   getYoutubeData(songTitleQuery, artistQuery, renderResult);
   getArtistData(artistQuery, getEventData);
+
 });
+
+// SHOW FOCUS ITEMS
+// function unhideResults(){
+//   let x = document.getElementById('thumbnail');
+//   console.log(x);
+//   if(x.style.visibility === "hidden"){
+//     x.style.visibility = "visible";
+//   }
+// }
+
 
 // MUSIXMATCH LYRIC API FUNCTION
 function getLyricData(songTitleQuery, artistQuery, callback) {
@@ -148,87 +164,33 @@ function renderEvents(eventData) {
       <p>No upcoming events for this artist.</p>
       </div>`
     )
+  // } else if (eventData.events.event.length > 3){
+  //   // IF THERE IS LESS THAN 3 EVENTS, APPEND THE 1 or 2 EVENTS
+
   } else {
-    //OTHERWISE APPEND EVENTS
+    //OTHERWISE APPEND NEXT 3 EVENTS
     $('#js-concertresults').empty();
     $('#js-concertresults').append(
       `<div class="container">
         <h2>Upcoming Events</h2>
-        <div class="box more-result">
-          <p>Event: ${eventData.events.event[0].title}</p>
+        <div class="col-3">
+          <p>Event: <a href="${eventData.events.event[0].url}" target="_blank">${eventData.events.event[0].title}</a></p>
           <p>Location: ${eventData.events.event[0].location}</p>
           <p>Date: ${eventData.events.event[0].start_time}</p>
-          <p>More Info: <a href="${eventData.events.event[0].url}" target="_blank">Event Info</a></p>
   			</div>
   
-        <div class="box more-result">
-          <p>Event: ${eventData.events.event[1].title}</p>
+        <div class="col-3">
+          <p>Event: <a href="${eventData.events.event[1].url}" target="_blank">${eventData.events.event[1].title}</a></p>
           <p>Location: ${eventData.events.event[1].location}</p>
           <p>Date: ${eventData.events.event[1].start_time}</p>
-          <p>More Info: <a href="${eventData.events.event[1].url}" target="_blank">Event Info</a></p>
         </div>
   
-        <div class="box more-result">
-          <p>Event: ${eventData.events.event[2].title}</p>
+        <div class="col-3">
+          <p>Event: <a href="${eventData.events.event[2].url}" target="_blank">${eventData.events.event[2].title}</a></p>
           <p>Location: ${eventData.events.event[2].location}</p>
           <p>Date: ${eventData.events.event[2].start_time}</p>
-          <p>More Info: <a href="${eventData.events.event[2].url}" target="_blank">Event Info</a></p>
         </div>
         </div>`   
     )
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function renderMoreResults(data) {
-//   console.log('loading more results...');
-//   const moreResults1 = data.items[1].id.videoId;
-//   const moreResults2 = data.items[2].id.videoId;
-//   const moreResults3 = data.items[3].id.videoId;
-//   console.log(`moreResults1 videoID is ${moreResults1}`);
-//   console.log(`moreResults2 videoID is ${moreResults2}`);
-//   console.log(`moreResults3 videoID is ${moreResults3}`);
-
-// 	$('#js-moreresults-target').empty();
-//   $('#js-moreresults-target').append(
-
-//     `<div class="container">
-// 				<h2>Didn't Find The Correct Music Video?</h2>
-// 				<p>Choose another option by clicking the video thumbnail below</p>
-
-// 			<div class="box more-result">
-// 				<a href="#" videoid="${moreResults1}" id="moreresult1" onclick="javascript:moreResultVideo1(event)">
-// 				<img src="${data.items[1].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>	
-// 				<p>${data.items[1].snippet.title}</p>
-// // 			</div>
-
-// 			<div class="box more-result">
-// 			<a href="#" videoid="${moreResults2}"  id="moreresult2" onclick="javascript:moreResultVideo2(event)">
-// 				<img src="${data.items[2].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>
-// 				<p>${data.items[2].snippet.title}</p>
-// 			</div>
-
-// 			<div class="box more-result">
-// 			<a href="#" videoid="${moreResults3}" id="moreresult3" onclick="javascript:moreResultVideo3(event)">
-// 				<img src="${data.items[3].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>
-// 				<p>${data.items[3].snippet.title}</p>
-// 			</div>
-// 			</div>`
-//   );
-// }
