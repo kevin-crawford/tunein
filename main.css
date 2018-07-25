@@ -71,7 +71,7 @@ header a:hover {
 
 #showcase {
 	min-height: 400px;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/7Q89Eco.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/7Q89Eco.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-bottom: #7d8500 3px solid;
@@ -241,6 +241,7 @@ aside#sidebar {
 
 #showcase h1 {
 	margin-top: 10px;
+	font-size: 24px;
 }
 
 }
