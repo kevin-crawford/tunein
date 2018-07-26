@@ -3,7 +3,6 @@
 }
 
 body {
-	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding: 0;
 	margin: 0;
 	background-color: #f4f4f4;
@@ -38,7 +37,9 @@ header {
 	min-height: 70px;
 	border-bottom: #7d8500 3px solid;
 	font-size: 24px;
+	font: 26px/1.5 Arial, Helvetica, sans-serif;
 }
+
 
 ul {
 	margin: 0;
@@ -86,21 +87,23 @@ header a:hover {
 
 #showcase {
 	min-height: 400px;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/7Q89Eco.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/J0PN6Rk.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-bottom: #7d8500 3px solid;
 	color: #ffffff;
-	text-align: center;
+
 }
 
 #showcase h1 {
 	margin-top:	100px;
 	font-size: 34px;
+	font-family: 'Oswald', sans-serif;
 }
 
 #showcase p {
-	font-size: 18px
+	font-size: 18px;
+	font-family: 'EB Garamond', sans-serif;
 }
 
 /* FORM STYLING */
@@ -115,10 +118,10 @@ fieldset {
 	width: 100%;
 }
 
-/* 
-#search-form {
-	background: #54626b;
-} */
+#song-search legend {
+	font-family: 'Karla', sans-serif;
+	font-size: 18px;
+}
 
 .title-search {
 	padding-bottom: 10px;
@@ -159,13 +162,11 @@ fieldset {
 	width: 100%;
 	overflow-y: scroll;
 	text-align: center;
-	border-top: #7d8500 dotted 1px;
-	border-bottom: #7d8500 dotted 1px;
+	border-top: #7d8500 solid 2px;
+	border-bottom: #7d8500 solid 2px;
 }
 
-/* #thumbnail {
-	background: #54626b;
-} */
+
 
 #thumbnail img {
 	width: 100%;
@@ -174,7 +175,7 @@ fieldset {
 	font-weight: bold;
 	font-size: 16px;
 	background-color: #ffdb99;
-	border: black solid 1px;
+	border-bottom: black solid 1px;
 }
 
 #youtube-result {
@@ -185,10 +186,26 @@ fieldset {
 	margin-top: 20px;
 }
 
-/* 
-#lyrics-container {
-	background: #54626b;
-} */
+#focus-result h3 {
+	background: #717171;
+	color: white;
+	border-radius: 25px;
+	margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 40px;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+.page-title {
+	background: #434440;
+	color: #ffffff;
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	border-radius: 25px;
+	padding: 10px 0;
+}
 
 
 /* CONCERT RESULTS */
@@ -197,6 +214,11 @@ fieldset {
 	text-align: center;
 	background: #b3b3b3;
 	border-radius: 25px;
+	margin: 1em 0 0.5em 0;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 40px;
+	font-family: 'Oswald', sans-serif;
 }
 
 #concert-results span {
@@ -214,8 +236,9 @@ fieldset {
 }
 
 #concert-results p {
-	text-align: center;
+	text-align: left;
 	font-size: 18px;
+	font-family: 'Karla', sans-serif;
 }
 
 #concert-results a {
@@ -252,7 +275,29 @@ article#main-col {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 15px;
+	border-radius: 5px;
 }
+.dark a {
+	text-decoration: none;
+	color: #e4f30e;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Karla', sans-serif;
+	text-align: center;
+}
+
+.dark h3 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	text-align: center;
+}
+
+#main p {
+	font-family: 'EB Garamond', sans-serif;
+	line-height: 25px;
+	font-weight: normal;
+}
+
 
 
 /* FOOTER */
@@ -262,8 +307,11 @@ footer {
 	 font-size: 16px;
 	 color: #ffffff;
 	 text-align: center;
+	 font-family: 'Karla', sans-serif;
 	 background-color: #434440;
 	 border-top: #7d8500 3px solid;
+	 width: 100%;
+	 bottom: 0;
 }
 
 /* Media Queries */
@@ -289,6 +337,7 @@ footer {
 
 header {
 	padding-bottom: 20px;
+	font-size: 18px;
 }
 
 #showcase h1 {

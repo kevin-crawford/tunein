@@ -73,19 +73,19 @@ function getYoutubeData(songTitleQuery, artistQuery, callback) {
 
 function renderResult(data) {
   
-  var thumbnailResult = data.items[1].snippet.thumbnails.medium.url;
+  var thumbnailResult = data.items[1].snippet.thumbnails.medium.url
+  ;
   var youtubeURL = data.items[1].id.videoId;
   console.log(thumbnailResult);
   $('#youtube-result').empty();
   $('#youtube-result').append(
     ` <h3>Song Thumbnail</h3>
+    <p> ${data.items[1].snippet.title} <i class="fas fa-angle-double-down"></i></p>
     <a href="https://www.youtube.com/watch?v=${youtubeURL}" id="youtube-link" target="_blank">
     <img src="${data.items[1].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>	
-    <p>${data.items[1].snippet.title}</p>`
+    `
   )
-
   console.log('loading result...');
-  
 }
 
 // EVENTFUL API FUNCTIONS
@@ -105,13 +105,7 @@ function getArtistData(artistQuery, callback) {
 }
   
 function getEventData(artistData, callback) {
-  
   let artistID;
-
-  // if no performer, append no results message
-  // else if performers is not an array, get artistId from object
-  // else if performers IS an array,  get artistID from from first performer.
-
   if( artistData.performers == null){
     $('#js-concertresults').empty()
     $('#js-concertresults').append(
@@ -170,9 +164,9 @@ function renderEvents(eventData) {
     $('#js-concertresults').append(
       `
         <div class="col-3">
-          <p><span>Event:</span> <a href="${eventData.events.event[i].url}" target="_blank">${eventData.events.event[i].title}</a></p>
-          <p><span>Location:</span> ${eventData.events.event[i].location}</p>
-          <p><span>Date:</span> ${eventData.events.event[i].start_time}</p>
+          <p><span>Event:</span> <a href="${eventData.events.event[i].url}" target="_blank">${eventData.events.event[i].title} <i class="fas fa-arrow-alt-circle-left"></i></a></p>
+          <p><i class="fas fa-compass"></i> <span>Location:</span> ${eventData.events.event[i].location}</p>
+          <p><i class="fas fa-calendar-alt"></i> <span>Date:</span> ${eventData.events.event[i].start_time}</p>
         </div>
       `);
     }
