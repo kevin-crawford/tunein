@@ -106,11 +106,13 @@ fieldset {
 #song-search {
 	margin-top: 20px;
 	text-align: center;
+	width: 100%;
 }
 
+/* 
 #search-form {
 	background: #54626b;
-}
+} */
 
 .title-search {
 	padding-bottom: 10px;
@@ -144,15 +146,18 @@ fieldset {
 #lyric-results {
 	background-color: #e6ffcd;
 	height: 250px;
-	width: 310px;
+	width: 100%;
 	overflow-y: scroll;
 	text-align: center;
 }
 
-#thumbnail {
+/* #thumbnail {
 	background: #54626b;
-}
+} */
 
+#thumbnail img {
+	width: 100%;
+}
 #thumbnail p {
 	font-weight: bold;
 	font-size: 16px;
@@ -168,10 +173,10 @@ fieldset {
 	margin-top: 20px;
 }
 
-
+/* 
 #lyrics-container {
 	background: #54626b;
-}
+} */
 
 
 /* CONCERT RESULTS */
@@ -266,6 +271,9 @@ footer {
 		width: 100%;
 	}
 
+.col-3{
+	margin: 10px 0;
+}
 
 header {
 	padding-bottom: 20px;
