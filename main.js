@@ -102,8 +102,6 @@ function getArtistData(artistQuery, callback) {
     success: callback
   }
   $.ajax(settings);
-  const artist = $.ajax(settings);
-  console.log(artist);
 }
   
 function getEventData(artistData, callback) {
@@ -153,33 +151,30 @@ function renderEvents(eventData) {
       <p>No upcoming events for this artist.</p>
       </div>`
     )
-  // } else if (eventData.events.event.length > 3){
-  //   // IF THERE IS LESS THAN 3 EVENTS, APPEND THE 1 or 2 EVENTS
-
   } else {
-    //OTHERWISE APPEND NEXT 3 EVENTS
     $('#js-concertresults').empty();
+    $('#js-concertresults').append(`<h2>Upcoming Events</h2>`);
+    if (eventData.events.event.length < 3){
+      for( let i = 0; i < eventData.events.event.length; i++){
+        $('#js-concertresults').append(
+        `
+        <div class="col-3">
+          <p><span>Event:</span> <a href="${eventData.events.event[i].url}" target="_blank">${eventData.events.event[i].title}</a></p>
+          <p><span>Location:</span> ${eventData.events.event[i].location}</p>
+          <p><span>Date:</span> ${eventData.events.event[i].start_time}</p>
+        </div>
+      `);       
+      }
+    } else {
+      for ( let i = 0; i < 3; i++){
     $('#js-concertresults').append(
-      `<div class="container">
-        <h2>Upcoming Events</h2>
+      `
         <div class="col-3">
-          <p><span>Event:</span> <a href="${eventData.events.event[0].url}" target="_blank">${eventData.events.event[0].title}</a></p>
-          <p><span>Location:</span> ${eventData.events.event[0].location}</p>
-          <p><span>Date:</span> ${eventData.events.event[0].start_time}</p>
-  			</div>
-  
-        <div class="col-3">
-          <p><span>Event:</span> <a href="${eventData.events.event[1].url}" target="_blank">${eventData.events.event[1].title}</a></p>
-          <p><span>Location:</span> ${eventData.events.event[1].location}</p>
-          <p><span>Date:</span> ${eventData.events.event[1].start_time}</p>
+          <p><span>Event:</span> <a href="${eventData.events.event[i].url}" target="_blank">${eventData.events.event[i].title}</a></p>
+          <p><span>Location:</span> ${eventData.events.event[i].location}</p>
+          <p><span>Date:</span> ${eventData.events.event[i].start_time}</p>
         </div>
-  
-        <div class="col-3">
-          <p><span>Event</span>: <a href="${eventData.events.event[2].url}" target="_blank">${eventData.events.event[2].title}</a></p>
-          <p><span>Location:</span> ${eventData.events.event[2].location}</p>
-          <p><span>Date:</span> ${eventData.events.event[2].start_time}</p>
-        </div>
-        </div>`   
-    )
+      `);
+    }
   }
-}
+}}

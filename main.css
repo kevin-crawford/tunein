@@ -11,8 +11,14 @@ body {
 
 .container {
 	width: 80%;
-	margin: auto;
+	margin: 0 auto;
 	overflow: hidden;
+}
+
+.container::before,
+.container::after {
+  display: table;
+  content: '';
 }
 
 .col-3 {
@@ -141,6 +147,10 @@ fieldset {
 	font-size: 18px;
 }
 
+.search-button:hover {
+	background: #7d8500;
+}
+
 /* LYRIC / SEARCH / YOUTUBE */
 
 #lyric-results {
@@ -149,6 +159,8 @@ fieldset {
 	width: 100%;
 	overflow-y: scroll;
 	text-align: center;
+	border-top: #7d8500 dotted 1px;
+	border-bottom: #7d8500 dotted 1px;
 }
 
 /* #thumbnail {
