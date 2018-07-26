@@ -15,6 +15,15 @@ body {
 	overflow: hidden;
 }
 
+.col-3 {
+	float: left;
+	width: 30%;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+}
+
+
 /* GLOBAL */
 header {
 	background: #434440;
@@ -67,7 +76,6 @@ header a:hover {
 	font-weight: bold;
 }
 
-
 /* Showcase */
 
 #showcase {
@@ -89,9 +97,6 @@ header a:hover {
 	font-size: 18px
 }
 
-
-
-
 /* FORM STYLING */
 
 fieldset {
@@ -99,10 +104,13 @@ fieldset {
 }
 
 #song-search {
-	margin-top: 40px;
+	margin-top: 20px;
 	text-align: center;
 }
 
+#search-form {
+	background: #54626b;
+}
 
 .title-search {
 	padding-bottom: 10px;
@@ -141,12 +149,17 @@ fieldset {
 	text-align: center;
 }
 
+#thumbnail {
+	background: #54626b;
+}
+
 #thumbnail p {
 	font-weight: bold;
 	font-size: 16px;
 	background-color: #ffdb99;
 	border: black solid 1px;
 }
+
 #youtube-result {
 	margin-top: 52px;
 }
@@ -155,16 +168,10 @@ fieldset {
 	margin-top: 20px;
 }
 
-.col-3 {
-	float: left;
-	width: 30%;
-	text-align: center;
-	padding: 10px;
-	margin: 10px;
+
+#lyrics-container {
+	background: #54626b;
 }
-
-
-
 
 
 /* CONCERT RESULTS */
@@ -202,7 +209,6 @@ fieldset {
 #concert-results a:visited {
 	color: #0931ff;
 }
-
 
 #concert-results a:hover {
 	color: white;
@@ -243,15 +249,13 @@ footer {
 	 border-top: #7d8500 3px solid;
 }
 
-
 /* Media Queries */
 
 @media(max-width: 768px){
 	header #branding,
 	header nav,
 	header nav li,
-	#concert-results .col-3,
-	#focus-result .col-3,
+	.col-3,
 	.title-search,
 	.lyric-search,
 	.lyrics,
@@ -262,17 +266,28 @@ footer {
 		width: 100%;
 	}
 
+
 header {
 	padding-bottom: 20px;
-}
-
-aside#sidebar {
-	width: 100%;
 }
 
 #showcase h1 {
 	margin-top: 10px;
 	font-size: 24px;
 }
+
+#showcase {
+	min-height: 300px;
+}
+
+#showcase .container {
+	padding-top: 50px;
+}
+
+aside#sidebar {
+	width: 100%;
+}
+
+
 
 }
