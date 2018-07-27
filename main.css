@@ -210,6 +210,7 @@ fieldset {
 	background: #434440;
 	color: #ffffff;
 	font-family: 'Oswald', sans-serif;
+	font-size: 26px;
 	font-weight: normal;
 	text-align: center;
 	border-radius: 25px;
@@ -306,6 +307,8 @@ article#main-col {
 	margin-bottom: 10px;
 	padding: 15px;
 	border-radius: 5px;
+	text-align: center;
+	height: 536px;
 }
 .dark a {
 	text-decoration: none;
@@ -313,13 +316,12 @@ article#main-col {
 	font-size: 20px;
 	font-weight: bold;
 	font-family: 'Karla', sans-serif;
-	text-align: center;
 }
 
 .dark h3 {
 	font-family: 'Oswald', sans-serif;
 	font-weight: normal;
-	text-align: center;
+	font-size: 22px;
 }
 
 .dark p {
@@ -334,6 +336,11 @@ article#main-col {
 #main-col p {
 	font-family: 'EB Garamond', sans-serif;
 	line-height: 25px;
+	font-weight: bold;
+}
+
+#main ul {
+	list-style-type: none;
 	font-weight: bold;
 }
 
@@ -356,6 +363,12 @@ footer {
 
 
 /* Media Queries */
+@media(max-width: 1116px){
+	.dark {
+		height: 100%;
+	}
+}
+
 @media(max-width: 1024px){
 	footer {
 		position: static;
