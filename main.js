@@ -14,7 +14,7 @@ $('#song-search').submit(event => {
   songTitleTarget.val("");
   artistTarget.val("");
 
-  $('#search-form').css('float', 'left');
+  $('#search-form').addClass('reveal')
   
   getLyricData(songTitleQuery, artistQuery, renderLyrics);
   getYoutubeData(songTitleQuery, artistQuery, renderResult);
@@ -82,9 +82,10 @@ function renderResult(data) {
   $('#youtube-result').empty();
   $('#youtube-result').append(
     ` <h3>Song Thumbnail</h3>
-    <p> ${data.items[1].snippet.title} <i class="fas fa-angle-double-down"></i></p>
+    <p> ${data.items[1].snippet.title}</p>
     <a href="https://www.youtube.com/watch?v=${youtubeURL}" id="youtube-link" target="_blank">
     <img src="${data.items[1].snippet.thumbnails.medium.url}" alt="video thumbnail"></a>	
+    <p>Click the photo to view the music video.</p>
     `
   )
   console.log('loading result...');
