@@ -88,7 +88,7 @@ header a:hover {
 /* Showcase */
 
 #showcase {
-	min-height: 400px;
+	min-height: 300px;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/J0PN6Rk.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
