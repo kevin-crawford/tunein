@@ -357,7 +357,7 @@ footer {
 	 background-color: #434440;
 	 border-top: #7d8500 3px solid;
 	 width: 100%;
-	position: absolute;
+	position: static;
 	 bottom: 0;
 }
 
