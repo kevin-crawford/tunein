@@ -14,6 +14,8 @@ $('#song-search').submit(event => {
   songTitleTarget.val("");
   artistTarget.val("");
 
+  $('#search-form').css('float', 'left');
+  
   getLyricData(songTitleQuery, artistQuery, renderLyrics);
   getYoutubeData(songTitleQuery, artistQuery, renderResult);
   getArtistData(artistQuery, getEventData);
