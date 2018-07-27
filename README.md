@@ -2,27 +2,27 @@
 # tuneinjs
 
 
-###Live link to WebApp: https://kdxcii.github.io/tuneinjs/
+### Live link to WebApp: https://kdxcii.github.io/tuneinjs/
 
 
 
 
-###Landing Page First View: Prior to Song/Artist search submission
+### Landing Page First View: Prior to Song/Artist search submission
 ![ScreenShot](/images/landingpage.png)
 
 
-###Landing Page Results Rendered View
+### Landing Page Results Rendered View
 ![Screenshot](/images/resultsection.png)
 
 
-###Landing Page No Lyrics/No Events View
+### Landing Page No Lyrics/No Events View
 ![Screenshot](/images/incorrectresults.png)
 
 
-###About Me Page View
+### About Me Page View
 ![Screenshot](/images/aboutpage.png)
 
-###SUMMARY:
+### SUMMARY:
 We at TuneIn hope this simple web app can help relieve "earworm" type symptoms by providing song lyrics, a music video provided by YouTube, and artist related upcoming events.
 
 This particular website utilizes third party API's to present artist and song data to the user. Once a song title and Artist is submitted, results will be generated.
@@ -33,14 +33,14 @@ Studies suggest that when a person has a catchy tune or song stuck in their head
 
 
 
-###Third Party API's:
+### Third Party API's:
 
 Google Search v3 API
 MUSIXMATCH Lyrics API
 Eventful API
 
 
-###Technology Used:
+### Technology Used:
 
 * HTML
 * CSS
