@@ -1,9 +1,9 @@
-
 // EVENT LISTENER FOR FORM SUBMISSION, includes called functions and callbacks.
 $('#song-search').submit(event => {
   event.preventDefault();
   console.log('submitting user input');
 
+  // log search inputs
   const songTitleTarget = $(event.currentTarget).find('.js-song-query');
   const songTitleQuery = songTitleTarget.val();
   const artistTarget = $(event.currentTarget).find('.js-artist-query');
@@ -26,12 +26,16 @@ $('#song-search').submit(event => {
 function getLyricData(songTitleQuery, artistQuery, callback) {
   const settings = {
     type: 'GET',
+    contentType: "application/json; charset=utf-8",
     data: {
-      apikey: 'ckw0AQMG9RJJzoePEGhYq31rHHVesMHqwUIavY94J0IiS4QMlNgsHvY3USAD3102',
+      apikey: '2933bfd90e49ee046e73a3d33c4e15b3',
+      q_track: `${artistQuery}`,
+      q_artist: `${songTitleQuery}`,
     },
-    url: `https://orion.apiseeds.com/api/music/lyric/${artistQuery}/${songTitleQuery}`,
+    url: `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get`,
     dataType: 'json',
     success: callback,
+    crossDomain: true,
     error: function() {
 			$('.lyrics').empty();
       $('.lyrics').append(`
@@ -45,12 +49,17 @@ function getLyricData(songTitleQuery, artistQuery, callback) {
 
 function renderLyrics(data) {
   $('.lyrics').empty();
-  const results = data.result.track.text;
-  var paddedResults = results.replace(/\n/g, '<br>');
-
-  $('.lyrics').append(
-    `<h3>Song Lyrics</h3>	
-    <p id="lyric-results">${paddedResults}</p>`);
+  console.log(data.message.body)
+  if( data.message.body.lyrics !== undefined) {
+    var paddedResults = data.message.body.lyrics.lyrics_body.replace(/\n/g, '<br>');
+    $('.lyrics').append(
+      `<h3>Song Lyrics</h3>	
+      <p id="lyric-results">${paddedResults}</p>`);
+  } else {
+    $('.lyrics').append(`
+    <h3>No Lyrics Found</h3>
+    <div id="lyric-results"><p>No results found</p> </div>`);
+  }
 }
 
 
