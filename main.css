@@ -11,6 +11,7 @@ body {
 
 .container {
 	width: 80%;
+	padding: 10px 10px;
 	margin: 0 auto;
 	overflow: hidden;
 
@@ -88,7 +89,6 @@ header a:hover {
 /* Showcase */
 
 #showcase {
-	min-height: 300px;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/J0PN6Rk.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -98,14 +98,13 @@ header a:hover {
 }
 
 #showcase h1 {
-	margin-top:	100px;
 	font-size: 34px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Chivo', sans-serif;
 }
 
 #showcase p {
 	font-size: 18px;
-	font-family: 'EB Garamond', sans-serif;
+	font-family: 'Underpass', sans-serif;
 }
 
 /* FORM STYLING */
@@ -130,8 +129,9 @@ fieldset {
 }
 
 #song-search legend {
-	font-family: 'Karla', sans-serif;
+	font-family: 'Chivo', sans-serif;
 	font-size: 18px;
+	margin-bottom: 10px;
 }
 
 .title-search {
@@ -185,6 +185,7 @@ fieldset {
 
 #thumbnail p {
 	font-weight: bold;
+	font-family: 'Underpass';
 	font-size: 16px;
 	background-color: #ffdb99;
 	border-bottom: black solid 1px;
@@ -196,20 +197,18 @@ fieldset {
 }
 
 #focus-result h3 {
-	background: #717171;
-	color: white;
+	color: black;
 	border-radius: 25px;
 	margin: 1em 0 0.5em 0;
 	font-weight: normal;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 40px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Chivo', sans-serif;
 }
 
 #main-col h1 {
-	background: #434440;
-	color: #ffffff;
-	font-family: 'Oswald', sans-serif;
+	color:black;
+	font-family: 'Chivo', sans-serif;
 	font-size: 26px;
 	font-weight: normal;
 	text-align: center;
@@ -221,22 +220,23 @@ fieldset {
 	padding: 70px 0px;
 }
 
-#tech-info {
-	background: #a1a1a1;
-	border-radius: 5px;
-	padding: 10px 10px 10px 40px;
-	margin-bottom: 12px;
-	font-family: 'karla', sans-serif;
-}
-
+#tech-info,
 #api-info {
 	background: #a1a1a1;
 	border-radius: 5px;
 	padding: 10px 10px 10px 40px;
-	font-family: 'karla', sans-serif;
+	margin: 10px;
+	width: 500px;
 }
-#api-info ul {
-	text-decoration: none;
+
+.tech-region.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+#api-info ul,
+#tech-info ul {
+	padding-left: 10px;
 }
 
 /* CONCERT RESULTS */
@@ -249,7 +249,7 @@ fieldset {
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 40px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Chivo', sans-serif;
 }
 
 #concert-results span {
@@ -269,7 +269,7 @@ fieldset {
 #concert-results p {
 	text-align: left;
 	font-size: 18px;
-	font-family: 'Karla', sans-serif;
+	font-family: 'Underpass', sans-serif;
 }
 
 #concert-results a {
@@ -315,33 +315,42 @@ article#main-col {
 	color: #e4f30e;
 	font-size: 20px;
 	font-weight: bold;
-	font-family: 'Karla', sans-serif;
+	font-family: 'Underpass', sans-serif;
+}
+
+.dark a:hover {
+	color: rgb(255, 255, 255);
 }
 
 .dark h3 {
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Chivo', sans-serif;
 	font-weight: normal;
 	font-size: 22px;
 }
 
 .dark p {
-	font-family: 'eb garamond', sans-serif;
-	font-weight: normal;
+	text-align: left;
+	text-indent: 5%;
+	font-family: 'Underpass', sans-serif;
 }
 
-#tech-info  {
-	font-family: 'karla', sans-serif;
+#tech-info h3,
+#api-info h3 {
+	font-family: 'Chivo', sans-serif;
 }
 
+#tech-info li,
+#api-info li {
+	font-family: 'Underpass', sans-serif;
+	padding: 10px 0px;
+}
 #main-col p {
-	font-family: 'EB Garamond', sans-serif;
+	font-family: 'Underpass', sans-serif;
 	line-height: 25px;
-	font-weight: bold;
 }
 
-#main ul {
-	list-style-type: none;
-	font-weight: bold;
+#main li {
+	margin-left: 10px;
 }
 
 
@@ -353,11 +362,10 @@ footer {
 	 font-size: 16px;
 	 color: #ffffff;
 	 text-align: center;
-	 font-family: 'Karla', sans-serif;
+	 font-family: 'Underpass', sans-serif;
 	 background-color: #434440;
-	 border-top: #7d8500 3px solid;
 	 width: 100%;
-	position: static;
+	 position: static;
 	 bottom: 0;
 }
 
@@ -386,7 +394,6 @@ footer {
 	article#main-col,
 	aside#side-bar{
 		float: none;
-		text-align: center;
 		width: 100%;
 	}
 
@@ -407,9 +414,7 @@ header {
 	font-size: 24px;
 }
 
-#showcase {
-	min-height: 300px;
-}
+
 
 #showcase .container {
 	padding-top: 50px;
