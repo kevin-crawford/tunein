@@ -26,14 +26,16 @@ $('#song-search').submit(event => {
 function getLyricData(songTitleQuery, artistQuery, callback) {
   const settings = {
     type: 'GET',
-    contentType: "application/json; charset=utf-8",
+    headers: {
+      'Content-Type':'application/jsonp'
+    },
     data: {
       apikey: '2933bfd90e49ee046e73a3d33c4e15b3',
       q_track: `${artistQuery}`,
       q_artist: `${songTitleQuery}`,
     },
     url: `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get`,
-    dataType: 'json',
+    dataType: 'jsonp',
     success: callback,
     crossDomain: true,
     error: function() {
