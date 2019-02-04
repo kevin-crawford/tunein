@@ -35,7 +35,6 @@ function getLyricData(songTitleQuery, artistQuery, callback) {
     url: `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get`,
     dataType: 'jsonp',
     success: callback,
-    crossDomain: true,
     error: function() {
 			$('.lyrics').empty();
       $('.lyrics').append(`
