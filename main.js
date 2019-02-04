@@ -26,9 +26,7 @@ $('#song-search').submit(event => {
 function getLyricData(songTitleQuery, artistQuery, callback) {
   const settings = {
     type: 'GET',
-    headers: {
-      'Content-Type':'application/jsonp'
-    },
+    contentType: "application/json; charset=utf-8",
     data: {
       apikey: '2933bfd90e49ee046e73a3d33c4e15b3',
       q_track: `${artistQuery}`,
