@@ -1,3 +1,5 @@
+'use strict'
+
 // EVENT LISTENER FOR FORM SUBMISSION, includes called functions and callbacks.
 $('#song-search').submit(event => {
   event.preventDefault();
@@ -23,24 +25,27 @@ $('#song-search').submit(event => {
 });
 
 // MUSIXMATCH LYRIC API FUNCTION
-function getLyricData(songTitleQuery, artistQuery, callback) {
+function getLyricData(songTitleQuery, artistQuery, renderLyrics) {
   const settings = {
     type: 'GET',
-    contentType: "application/json; charset=utf-8",
     data: {
       apikey: '2933bfd90e49ee046e73a3d33c4e15b3',
-      q_track: `${artistQuery}`,
-      q_artist: `${songTitleQuery}`,
+      q_artist: `${artistQuery}`,
+      q_track: `${songTitleQuery}`,
+      format: 'jsonp',
+      callback: 'renderLyrics'
     },
     url: `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get`,
-    dataType: 'json',
-    success: callback,
-    crossDomain: true,
-    error: function() {
-			$('.lyrics').empty();
-      $('.lyrics').append(`
-      <h3>No Lyrics Found</h3>
-      <div id="lyric-results"><p>No results found for <br>Song Title: ${songTitleQuery} <br> Artist: ${artistQuery}</p> </div>`);
+    contentType: "application/json",
+    dataType: 'jsonp',
+    jsonpCallback: 'renderLyrics',
+    success: function(data){
+      console.log(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
     }
   }
   $.ajax(settings);
@@ -49,7 +54,7 @@ function getLyricData(songTitleQuery, artistQuery, callback) {
 
 function renderLyrics(data) {
   $('.lyrics').empty();
-  console.log(data.message.body)
+  console.log(data)
   if( data.message.body.lyrics !== undefined) {
     var paddedResults = data.message.body.lyrics.lyrics_body.replace(/\n/g, '<br>');
     $('.lyrics').append(
@@ -58,7 +63,8 @@ function renderLyrics(data) {
   } else {
     $('.lyrics').append(`
     <h3>No Lyrics Found</h3>
-    <div id="lyric-results"><p>No results found</p> </div>`);
+    <div id="lyric-results"><p>No results found</p> </div>`)
+    ;
   }
 }
 

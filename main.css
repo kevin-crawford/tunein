@@ -264,6 +264,7 @@ fieldset {
 #concert-results .col-3 {
 	border: #7d8500 solid 3px;
 	background-color: #e6ffcd;
+	height: 200px;
 }
 
 #concert-results p {

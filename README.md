@@ -1,7 +1,7 @@
 
 # TuneIn
 
-### Live link to WebApp: https://kevin-crawford.github.io/tunein/
+### Live link to web app: https://kevin-crawford.github.io/tunein/
 
 
 
